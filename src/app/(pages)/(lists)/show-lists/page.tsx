@@ -5,7 +5,6 @@ import { AiOutlineCheckCircle } from "react-icons/ai";
 import Logbutton from "../components/loginButton";
 
 const ShowLists = async() => {
-    const logged = false;
     const seenShows = await getSeenShows();
     const toSeeShows = await getToSeeShows();
 

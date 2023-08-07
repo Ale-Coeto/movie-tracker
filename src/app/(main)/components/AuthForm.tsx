@@ -3,7 +3,7 @@
 import Button from "@/app/components/Button";
 import { useCallback, useEffect, useState } from "react";
 import Input from "@/app/(main)/components/Input";
-import { FieldValues, SubmitHandler, set, useForm } from "react-hook-form";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { signIn, useSession } from "next-auth/react";
 import { toast } from "react-hot-toast";
 import axios from "axios";

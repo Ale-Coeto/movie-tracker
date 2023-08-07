@@ -1,7 +1,5 @@
-import { Inter } from 'next/font/google'
 import ToasterContext from '@/app/context/ToasterContext'
 import AuthContext from '@/app/context/AuthContext'
-import NavBar from '@/app/components/NavBar/NavBar'
 import Sidebar from './components/Sidebar/Sidebar'
 
 

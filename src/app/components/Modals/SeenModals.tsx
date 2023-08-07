@@ -1,8 +1,6 @@
-import axios from "axios";
 import Button from "../Button";
 import Modal from "./Modal";
-import toast from "react-hot-toast";
-import { isMovieAdded } from "@/app/actions/isAdded";
+
 
 interface SeenModalProps {
     isOpen: boolean;

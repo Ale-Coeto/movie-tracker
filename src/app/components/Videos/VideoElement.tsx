@@ -1,13 +1,7 @@
 'use client'
-import axios from "axios";
-import { BiDotsHorizontal, BiDotsHorizontalRounded, BiPlusCircle } from 'react-icons/bi';
-import isLoggedIn from "../../hooks/isLogged";
+import { BiDotsHorizontalRounded, BiPlusCircle } from 'react-icons/bi';
 import Button from "../Button";
-import { toast } from "react-hot-toast";
 import { useState } from "react";
-import VideoFooter from "./VideoFooter";
-import { IoStar } from "react-icons/io5";
-import Star from "../Modals/Star";
 import StarGroup from "./StarGroup";
 import VideoModal from "../Modals/VideoModal";
 
@@ -26,25 +20,8 @@ interface VideoElementProps {
 }
 
 const videoElement: React.FC<VideoElementProps> = ({ id, title, image, description, date, voteAverage, type, seen, showComplete, explore, rate }) => {
-    const [clicked, setClicked] = useState(false);
-    const isLogged = isLoggedIn();
     const [info, setInfo] = useState(false);
-    const [button, setButton] = useState(true);
 
-    const handleClick = () => {
-        setClicked(!clicked);
-    }
-
-    const handleAdd = () => {
-        console.log(id);
-        axios.post("/api/addVideo", {
-            id, type, title, image, description, date, voteAverage
-        }).then(() => {
-            toast.success("Added to watchlist");
-        }).catch(() => {
-            toast.error("Error adding to watchlist");
-        })
-    }
 
     return (
         <>
@@ -82,9 +59,6 @@ const videoElement: React.FC<VideoElementProps> = ({ id, title, image, descripti
                             </div>
                         </div>
 
-                        {/* {isLogged &&
-                            <VideoFooter showComplete={false} id={id} title={title} image={image} description={description} date={date} voteAverage={voteAverage} type={type} seen={seen} />
-                        } */}
                         <div className="absolute right-2 bottom-1">
                             <Button>
                                 {showComplete ? (

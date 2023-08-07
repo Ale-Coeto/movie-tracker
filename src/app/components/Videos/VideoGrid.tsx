@@ -1,7 +1,5 @@
 'use client';
-import { get } from "http";
 import VideoElement from "./VideoElement";
-import { getMovie, getTrendingMovies } from "../../actions/getTrending";
 
 interface VideoGridProps {
     items: any;

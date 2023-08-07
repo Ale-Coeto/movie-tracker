@@ -2,11 +2,9 @@
 import { signOut } from "next-auth/react";
 import Button from "../Button";
 import BarElement from "./BarElement";
-import { useSession } from "next-auth/react";
-import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import useRoutes from "@/app/hooks/useRoutes";
-import isLogged from "@/app/hooks/isLogged";
+import useLogged from "@/app/hooks/useLogged";
 import { User } from '@prisma/client'
 
 interface DesktopBarProps {
@@ -14,7 +12,7 @@ interface DesktopBarProps {
 }
 
 const DesktopBar: React.FC<DesktopBarProps> = ({ user }) => {
-    const isLoggedIn = isLogged();
+    const isLoggedIn = useLogged();
     const router = useRouter();
     const routes = useRoutes();
 

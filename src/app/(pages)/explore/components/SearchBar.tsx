@@ -1,11 +1,8 @@
 'use client';
 
-import axios from 'axios';
-import { JSXElementConstructor, PromiseLikeOfReactNode, ReactElement, ReactNode, ReactPortal, useEffect, useState } from 'react';
-import { FieldValues, set, useForm } from 'react-hook-form';
+import { useEffect, useState } from 'react';
 import { IoSearch } from 'react-icons/io5';
-import { getMovie } from '../../../actions/getTrending';
-import VideoElement from '../../../components/Videos/VideoElement';
+
 import VideoGrid from '../../../components/Videos/VideoGrid';
 const SearchBar = () => {
 
@@ -15,17 +12,7 @@ const SearchBar = () => {
     const [clicked, setClicked] = useState(false);
     const [result, setResult] = useState<any>([]);
     const [showMenu, setShowMenu] = useState(false);
-    const [isMovie, setIsMovie] = useState(false);
 
-    // useEffect(() => {
-    //     axios.get(`https://api.themoviedb.org/3/search/movie?query=${id}&api_key=8cdb9b1141309a7f573a6325cec1687f`)
-    //         .then(response => setData(response.data))
-    //         .catch(error => console.log(error))
-    // }, [id])
-    // if (data?.results)
-    //     return data?.results.slice(0, limit);
-
-    // return [];
 
 
 
@@ -39,9 +26,8 @@ const SearchBar = () => {
             })
             .catch(error => console.log(error))
 
-        if (!movieSearch?.results)
+        if (!movieSearch.results)
             setMovieSearch([])
-
 
     }, [input])
 

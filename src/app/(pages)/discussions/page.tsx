@@ -1,4 +1,3 @@
-import Sidebar from "@/app/components/NavBar/NavBar";
 
 const Discussions = () => {
     return (

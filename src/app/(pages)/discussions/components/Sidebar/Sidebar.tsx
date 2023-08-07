@@ -1,6 +1,5 @@
 import { getGeneral } from "@/app/actions/getGeneral";
 import DesktopSideBar from "./DesktopSidebar";
-import { Discussion } from "@prisma/client";
 import { getDiscussions } from "@/app/actions/getDiscussions";
 
 const Sidebar = async({ children }: { children: React.ReactNode }) => {

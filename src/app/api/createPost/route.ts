@@ -7,7 +7,6 @@ export async function POST(req: Request) {
     try {
 
         const body = await req.json();
-        console.log(body, "body");
         const user = await getUser();
         
         if (!user || !body) {

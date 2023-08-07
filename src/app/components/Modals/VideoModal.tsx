@@ -1,4 +1,4 @@
-import isLoggedIn from "@/app/hooks/isLogged";
+import useLoggedIn from "@/app/hooks/useLogged";
 import StarGroup from "../Videos/StarGroup";
 import VideoFooter from "../Videos/VideoFooter";
 import Modal from "./Modal";
@@ -20,7 +20,7 @@ interface VideoModalProps {
 }
 
 const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, id, title, image, description, date, voteAverage, rate, type, seen, showComplete }) => {
-    const isLogged = isLoggedIn();
+    const useLogged = useLoggedIn();
 
     return (
         <Modal isOpen={isOpen} onClose={onClose} video>
@@ -52,7 +52,7 @@ const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, id, title, ima
                     </div>
                 )}
             </div>
-            {isLogged &&
+            {useLogged &&
                 <VideoFooter showComplete={showComplete} id={id} title={title} image={image} description={description} date={date} voteAverage={voteAverage} type={type} seen={seen} />
             }
             {/* <Test id="64ca1b82a5fd33988b56c3b7" /> */}

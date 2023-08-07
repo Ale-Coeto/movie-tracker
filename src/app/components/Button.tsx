@@ -1,9 +1,7 @@
 'use client';
 
 import clsx from "clsx";
-import { on } from "events";
 import { useRouter } from "next/navigation";
-import { type } from "os";
 
 interface ButtonProps {
     secondary?: boolean;

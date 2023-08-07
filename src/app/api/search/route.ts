@@ -1,4 +1,3 @@
-import { getMovie } from "@/app/actions/getTrending";
 import getUser from "@/app/actions/getUser";
 import { NextResponse } from "next/server";
 import prisma from "@/app/libs/prismadb";
@@ -7,12 +6,11 @@ interface IParams {
     id: string;
 }
 
-export async function GET(req: Request, {params}  : {params: IParams}) {
+export async function GET(req: Request, { params }: { params: IParams }) {
     try {
         const id = params.id;
-        
+
         const user = await getUser();
-        console.log(id)
 
         if (!user?.id || !id)
             return null;
@@ -24,15 +22,13 @@ export async function GET(req: Request, {params}  : {params: IParams}) {
             }
         })
 
-        
+
         if (!result)
             return null;
-        
-        console.log(result)
 
         return result;
 
-    } catch (error:any) {
+    } catch (error: any) {
         console.log(error, "Is movie added error");
         return false;
     }

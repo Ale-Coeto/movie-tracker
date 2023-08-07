@@ -1,4 +1,3 @@
-import isLoggedIn from "@/app/hooks/isLogged";
 import axios from "axios";
 import toast from "react-hot-toast";
 import Button from "../Button";
@@ -6,7 +5,6 @@ import { BiCheckCircle, BiPlusCircle, BiStar, BiTrash, BiUndo } from "react-icon
 import { useRouter } from "next/navigation";
 import ActionModal from "../Modals/ActionModal";
 import { useState } from "react";
-import { isMovieAdded } from "@/app/actions/isAdded";
 import RateModal from "../Modals/RateModal";
 import SeenModal from "../Modals/SeenModals";
 
@@ -67,8 +65,8 @@ const VideoFooter: React.FC<VideoFooterProps> = ({ id, title, image, description
 
     return (
         <>
-            <ActionModal id={id} action="Add" isOpen={add} onClose={() => setAdd(false)} handleAdd={handleAdd} />
-            <ActionModal id={id} action="Delete" isOpen={deleted} onClose={() => setDeleted(false)} handleAdd={handleDelete} />
+            <ActionModal action="Add" isOpen={add} onClose={() => setAdd(false)} handleAdd={handleAdd} />
+            <ActionModal action="Delete" isOpen={deleted} onClose={() => setDeleted(false)} handleAdd={handleDelete} />
             <SeenModal action="watched" isOpen={seenM} onClose={() => setSeen(false)} handleAdd={handleSeen} />
             <SeenModal action="not watched" isOpen={undo} onClose={() => setUndo(false)} handleAdd={handleSeen} />
             <RateModal id={id} type={type} isOpen={rate} onClose={() => setRate(false)} />

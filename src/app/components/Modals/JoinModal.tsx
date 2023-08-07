@@ -1,7 +1,5 @@
 'use client'
-import { useState } from "react";
 import Modal from "./Modal";
-import Star from "./Star";
 import Button from "../Button";
 import axios from "axios";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";

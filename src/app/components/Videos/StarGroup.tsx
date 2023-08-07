@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Star from "../Modals/Star";
 
 interface StarGroupProps {

@@ -1,7 +1,7 @@
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 
-const isLoggedIn = () => {
+const useLoggedIn = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const session = useSession();
     
@@ -16,4 +16,4 @@ const isLoggedIn = () => {
     return isLoggedIn;
 }
 
-export default isLoggedIn;
+export default useLoggedIn;

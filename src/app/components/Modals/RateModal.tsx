@@ -2,12 +2,10 @@
 import Button from "../Button";
 import Modal from "./Modal";
 import toast from "react-hot-toast";
-import { isMovieAdded } from "@/app/actions/isAdded";
-import { useEffect, useState } from "react";
-import clsx from "clsx";
 import Star from "./Star";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 
 interface RateModalProps {

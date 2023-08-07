@@ -1,7 +1,5 @@
 'use client'
-import { useState } from "react";
 import Modal from "./Modal";
-import Star from "./Star";
 import Button from "../Button";
 import axios from "axios";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
@@ -12,11 +10,10 @@ import { useRouter } from "next/navigation";
 interface CreateDiscussionModalProps {
     isOpen: boolean;
     onClose: () => void;
-    isLogged?: boolean;
 }
 
 
-const CreateDiscussionModal: React.FC<CreateDiscussionModalProps> = ({ isOpen, onClose, isLogged }) => {
+const CreateDiscussionModal: React.FC<CreateDiscussionModalProps> = ({ isOpen, onClose }) => {
     const router = useRouter();
     const {handleSubmit, register, setValue, formState: { errors } } = useForm<FieldValues>({defaultValues: {title: '', content: ''}})
 

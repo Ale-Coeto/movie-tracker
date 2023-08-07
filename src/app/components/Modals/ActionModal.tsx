@@ -1,18 +1,15 @@
-import axios from "axios";
 import Button from "../Button";
 import Modal from "./Modal";
-import toast from "react-hot-toast";
-import { isMovieAdded } from "@/app/actions/isAdded";
+
 
 interface ActionModalProps {
     isOpen: boolean;
     onClose: () => void;
-    id: string;
     handleAdd: () => void;
     action: string;
 }
 
-const ActionModal: React.FC<ActionModalProps> = ({ isOpen, onClose, id, handleAdd, action }) => {
+const ActionModal: React.FC<ActionModalProps> = ({ isOpen, onClose, handleAdd, action }) => {
 
     return (
         <Modal isOpen={isOpen} onClose={onClose}>
