@@ -1,20 +1,21 @@
 # Movie and show tracker
 Website to keep track of trending shows and movies, make a watch list, rate shows and videos and keep discussion groups with friends and the community.
-
+<br/>
 
 # Features
-**Authentication**
+### Authentication
 User login and registration with Next-Auth.
 
-**Dashboard**
+
+### Dashboard
 Top ten trending and popular tv shows and movies fetched from The MovieDB API.
 
-**Explore**
+### Explore
 Section to search for any movie or show title, showing other possible or related options.
 
-**Discussions**
+### Discussions
 Space for group discussions to comment about or rate movies and shows. Users can see and comment in the general discussion (available to all users), create a new one, or join an existing one through a code.  
-
+<br/>
 
 # Tools
 Built with:
@@ -29,7 +30,7 @@ Built with:
 - [MongoDB Atlas](https://www.mongodb.com/atlas/database)
   
 Deployed with [Vercel](https://vercel.com/)
-
+<br/>
 
 # Structure
 ```bash
@@ -61,6 +62,7 @@ Deployed with [Vercel](https://vercel.com/)
         └─ libs
 ```
 
+<br/>
 
 # Check it out
 https://movies-and-series-tracker.vercel.app/
