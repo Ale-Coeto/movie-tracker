@@ -26,20 +26,20 @@ Deployed with [Vercel](https://vercel.com/)
 │
 └─ src/app
     ├─ (main)
-    |
+    │
     ├─ (pages)
-    |   ├─ dashboard
-    |   ├─ discussions
-    |   ├─ explore
-    |   └─ (lists)
-    |         ├─ show-list
-    |         └─ movie-list
-    |
+    │   ├─ dashboard
+    │   ├─ discussions
+    │   ├─ explore
+    │   └─ (lists)
+    │         ├─ show-list
+    │         └─ movie-list
+    │
     ├─ components
-    |
+    │
     ├─ api
-    |   └─ routes
-    |    
+    │   └─ routes
+    │    
     └─ utils
         ├─ actions
         ├─ context
