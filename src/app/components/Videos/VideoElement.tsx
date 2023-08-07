@@ -25,8 +25,8 @@ const videoElement: React.FC<VideoElementProps> = ({ id, title, image, descripti
 
     return (
         <>
-            <VideoModal showComplete={showComplete} isOpen={info} onClose={() => setInfo(false)} id={id} title={title} description={description} image={image!} date={date!} voteAverage={voteAverage!} rate={rate!} seen={seen} type={type} />
-            <div onClick={() => setInfo(true)} className="flex bg-secondary py-4 pl-4 m-2 rounded-md hover:bg-tertiary z-10">
+            <VideoModal showComplete={showComplete} isOpen={info} onClose={() => setInfo(!info)} id={id} title={title} description={description} image={image!} date={date!} voteAverage={voteAverage!} rate={rate!} seen={seen} type={type} />
+            <div onClick={() => setInfo(!info)} className="flex bg-secondary py-4 pl-4 m-2 rounded-md hover:bg-tertiary z-10">
                 <div className="flex flex-row w-full gap-4">
                     <div className="h-44 object-cover w-44">
                         <img src={`https://image.tmdb.org/t/p/original${image}`} alt="video thumbnail" className="h-full w-28 rounded-md object-cover" />

@@ -17,7 +17,7 @@ const Container: React.FC<ContainerProps> = ({ title, movies, type, seen }) => {
             </h2>
             <div className="grid md:grid-cols-2 xl:grid-cols-3">
                 {movies.map((movie, key) => (
-                    <div >
+                    <div key={key}>
                         <VideoElement key={key} showComplete={true} type={type} id={movie.id} title={movie.title} rate={movie.rated!} image={movie.image!} description={movie.description!} voteAverage={movie.voteAverage!} date={movie.date!} seen={seen} />
                     </div>
                 ))}

@@ -19,8 +19,9 @@ interface ButtonProps {
 
 
 const Button: React.FC<ButtonProps> = ({ secondary, warning, star, children, onClick, type, rounded, p4, wfull, redirect, href }) => {
+    const router = useRouter();
+    
     if (redirect) {
-        const router = useRouter();
         onClick = () => {
             router.push(href!);
         }
