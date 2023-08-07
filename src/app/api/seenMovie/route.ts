@@ -13,32 +13,52 @@ export async function POST(req: Request) {
         if (!body)
             return new NextResponse("Missing information", { status: 400 });
 
-        const seenVal = await prisma.movie.findUnique({
-            where: {
-                id: body.id,
-                userId: user.id
-            }
-        })
-        console.log(body.id)
+        if (body.type == "movie") {
+            const seenVal = await prisma.movie.findUnique({
+                where: {
+                    id: body.id,
+                    userId: user.id
+                }
+            })
 
+            if(!seenVal)
+                return new NextResponse("Movie not found", { status: 404 });
 
-        if(!seenVal)
-            return new NextResponse("Movie not found", { status: 404 });
+            const updateMovie = await prisma.movie.update({
+                where: {
+                    id: body.id,
+                    userId: user.id
+                },
+                data: {
+                    seen: !seenVal?.seen
+                }
+            })
 
-        console.log(seenVal?.seen, "seenVal")
+            return NextResponse.json(updateMovie);
 
+        } else {
+            const seenVal = await prisma.show.findUnique({
+                where: {
+                    id: body.id,
+                    userId: user.id
+                }
+            })
 
-        const updateMovie = await prisma.movie.update({
-            where: {
-                id: body.id,
-                userId: user.id
-            },
-            data: {
-                seen: !seenVal?.seen
-            }
-        })
+            if(!seenVal)
+                return new NextResponse("Show not found", { status: 404 });
 
-        return NextResponse.json(updateMovie);
+            const updateShow = await prisma.show.update({
+                where: {
+                    id: body.id,
+                    userId: user.id
+                },
+                data: {
+                    seen: !seenVal?.seen
+                }
+            })
+
+            return NextResponse.json(updateShow);
+        }
         
 
     } catch (error:any) {

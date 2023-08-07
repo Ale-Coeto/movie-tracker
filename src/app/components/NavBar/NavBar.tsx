@@ -1,12 +1,15 @@
 import getUser from "@/app/actions/getUser";
 import DesktopBar from "./DesktopBar";
+import { isMovieAdded } from "@/app/actions/isAdded";
 
 async function Sidebar({ children }: {
     children: React.ReactNode,
   }) {
 
     const user = await getUser();
-    console.log(user)
+    // const isAdded = isMovieAdded("64ca1b82a5fd33988b56c3b7")
+    // .then((e) => console.log(e))
+    // .catch(() => console.log('error'));
 
     return (
       <div className="h-full bg-primary">

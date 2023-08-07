@@ -10,10 +10,13 @@ export async function POST(req: Request) {
         if (!user || !user?.email) 
             return new NextResponse("User not found", { status: 404 });
         
+            console.log(user, "u")
         if (!body)
             return new NextResponse("Missing information", { status: 400 });
+        
+            console.log(body)
 
-        if (body.type == "movie") {
+
         const newMovie = await prisma.movie.create({
             data: {
                 dbId: body.id,
@@ -29,11 +32,13 @@ export async function POST(req: Request) {
                     }
                 }
             }
+            
         })
-        
+        console.log("done")
         return NextResponse.json(newMovie);
+    
         } else {
-            const newShow = await prisma.movie.create({
+            const newShow = await prisma.show.create({
                 data: {
                     dbId: body.id,
                     title: body.title,

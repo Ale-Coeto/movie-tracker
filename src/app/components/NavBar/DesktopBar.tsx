@@ -27,7 +27,7 @@ const DesktopBar: React.FC<DesktopBarProps> = ({ user }) => {
 
 
     return (
-        <div className="flex flex-row h-auto w-screen bg-secondary px-4 py-3 fixed shadow-md justify-between opacity-[0.97] backdrop-blur-sm items-center">
+        <div className="flex flex-row h-auto w-screen bg-secondary px-4 py-3 fixed shadow-md justify-between opacity-[0.97] backdrop-blur-sm items-center z-50">
             <div className="flex flex-row justify-start gap-6">
                 {routes.map((route, key) => (
                     <BarElement key={key} label={route.label} href={route.href} />

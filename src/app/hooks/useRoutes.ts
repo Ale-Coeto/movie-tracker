@@ -11,12 +11,16 @@ const useRoutes = () => {
             href: "/explore",
         },
         {
-            label: "Movie Lists",
+            label: "Movie List",
             href: "/movie-lists",
         },
         {
-            label: "Show lists",
+            label: "Show list",
             href: "/show-lists",
+        },
+        {
+            label: "Discussions",
+            href: "/discussions",
         }
     ], [])
 

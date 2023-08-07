@@ -24,7 +24,7 @@ export default function RootLayout({
           <ToasterContext />
           <div className='h-full bg-primary'>
             <NavBar>
-              <div className='h-screen pt-20'>
+              <div className='h-screen pt-16'>
                 {children}
               </div>
             </NavBar>

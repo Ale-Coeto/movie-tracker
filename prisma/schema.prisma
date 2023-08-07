@@ -11,46 +11,73 @@ datasource db {
 }
 
 model User {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-  name String?
-  email String? @unique
+  id             String  @id @default(auto()) @map("_id") @db.ObjectId
+  name           String?
+  email          String? @unique
   hashedPassword String?
 
   movies Movie[]
-  shows Show[]
+  shows  Show[]
+  posts  Post[]
+
+  discussionIds String[]     @db.ObjectId
+  discussions   Discussion[] @relation(fields: [discussionIds], references: [id])
 }
 
 model Movie {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-  dbId Int @unique
-  title String
-  image String?
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  dbId        Int      
+  title       String
+  image       String?
   description String?
   voteAverage Float?
-  date String?
-  rated String?
-  createdAt DateTime @default(now())
-  seen Boolean @default(false)
-  
-  userId String @db.ObjectId
-  user User @relation(fields: [userId], references: [id])
+  date        String?
+  rated       Int?
+  createdAt   DateTime @default(now())
+  seen        Boolean  @default(false)
 
+  userId String @db.ObjectId
+  user   User   @relation(fields: [userId], references: [id])
 }
 
 model Show {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-  dbId Int @unique
-  title String
-  image String?
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  dbId        Int      
+  title       String
+  image       String?
   description String?
   voteAverage Float?
-  date String?
-  rated String?
-  seasons Int?
-  createdAt DateTime @default(now())
-  seen Boolean @default(false)
-  
-  userId String @db.ObjectId
-  user User @relation(fields: [userId], references: [id])
+  date        String?
+  rated       Int?
+  seasons     Int?
+  createdAt   DateTime @default(now())
+  seen        Boolean  @default(false)
 
+  userId String @db.ObjectId
+  user   User   @relation(fields: [userId], references: [id])
+}
+
+model Discussion {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  title     String
+  createdAt DateTime @default(now())
+
+  userIds String[] @db.ObjectId
+  users   User[]   @relation(fields: [userIds], references: [id])
+
+  posts Post[]
+}
+
+model Post {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  title     String
+  rating    Int?
+  createdAt DateTime @default(now())
+  content   String
+
+  discussionId String     @db.ObjectId
+  discussion   Discussion @relation(fields: [discussionId], references: [id])
+
+  userId String @db.ObjectId
+  user   User   @relation(fields: [userId], references: [id])
 }

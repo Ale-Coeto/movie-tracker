@@ -30,11 +30,12 @@ const SearchBar = () => {
 
 
     useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/search/movie?query=${input}&api_key=8cdb9b1141309a7f573a6325cec1687f`)
+        fetch(`https://api.themoviedb.org/3/search/multi?query=${input}&api_key=8cdb9b1141309a7f573a6325cec1687f`)
             .then(response => response.json())
             .then(json => {
                 if (json.results.length > 0)
-                    setMovieSearch(json)
+                    if (json.results.filter((e: { title: string; name: string; genre_ids: number[], poster_path: string }) => (e.title || e.name) && e.genre_ids && e.poster_path !== null).length > 0)
+                        setMovieSearch(json.results)
             })
             .catch(error => console.log(error))
 
@@ -51,13 +52,13 @@ const SearchBar = () => {
     }
     const handleSearch = () => {
         setShowMenu(false);
-        setResult(movieSearch.results);
+        setResult(movieSearch);
         setClicked(true);
     }
 
 
     return (
-        <div className='flex flex-col'>
+        <div className='flex flex-col '>
             <div className="flex justify-center">
 
                 <div className='basis-5/12 relative'>
@@ -81,18 +82,20 @@ const SearchBar = () => {
 
 
 
-                    <div className='absolute w-full backdrop-blur-sm'>
+                    <div className='absolute w-full backdrop-blur-sm z-50'>
 
-                        {(showMenu && movieSearch.results && input != '') && (
+                        {(showMenu && movieSearch && input != '') && (
                             <ul className='bg-secondary rounded-xl text-gray-200 l-0 mt-2 drop-shadow-2xl opacity-[0.97] text-left max-h-72 overflow-y-scroll'>
-                                {movieSearch.results.slice(0, 10).map((item: any, key: any) => (
-                                    <div className="flex flex-row hover:bg-tertiary  my-1 p-2 hover:cursor-pointer" key={key}>
-                                        <IoSearch size={18} />
-                                        <li className='ml-2' onClick={() => handleList(item.title)}>
-                                            {item.title}
-                                        </li>
+                                {movieSearch.slice(0, 10).map((item: any, key: any) => (
+                                    item.title && (
+                                        <div className="flex flex-row hover:bg-tertiary  my-1 p-2 hover:cursor-pointer" onClick={() => handleList(item.title)} key={key}>
+                                            <IoSearch size={18} />
+                                            <li className='ml-2' >
+                                                {item.title}
+                                            </li>
 
-                                    </div>
+                                        </div>
+                                    )
                                 ))}
                             </ul>
                         )}
@@ -103,7 +106,7 @@ const SearchBar = () => {
 
             <div className='mt-8'>
                 {clicked && result && (
-                    <VideoGrid type="movie" items={result} />
+                    <VideoGrid items={result} explore />
                 )}
             </div>
 

@@ -15,10 +15,10 @@ interface InputProps {
 const Input: React.FC<InputProps> = ({ id, label, errors, disabled, type, register, required }) => {
     return (
         <div className="flex flex-col mx-0 mb-8">
-            <label className="text-gray-600 mb-2" htmlFor={id}>
+            <label className="text-gray-100 mb-2" htmlFor={id}>
                 {label}
             </label>
-            <input id={id} type={type} disabled={disabled} {...register(id,{required})} className="border-0 w-full m-0 ring-1 ring-inset ring-gray-300 rounded-md p-1 focus:ring-green-500" />
+            <input id={id} type={type} disabled={disabled} {...register(id,{required})} className="border-0 w-full m-0 ring-1 ring-inset bg-quaternary rounded-md p-1 text-white outline-none focus:ring-inset focus:ring-rose-500" />
 
         </div>
     )

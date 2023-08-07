@@ -68,7 +68,7 @@ const AuthForm = () => {
 
     return (
         <>
-            <div className="flex flex-col p-6 border rounded-lg shadow sm:mx-auto sm:w-full sm:max-w-md bg-white">
+            <div className="flex flex-col p-6  rounded-lg shadow sm:mx-auto sm:w-full sm:max-w-md bg-tertiary">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     {(variant == "REGISTER") &&
                         <Input id="name" label="Name" errors={errors} disabled={isLoading} register={register} />
@@ -83,20 +83,20 @@ const AuthForm = () => {
 
                 <div className="relative mt-2">
                     <div className="absolute inset-0 flex items-center">
-                        <div className="w-full border-t border-gray-300" />
+                        <div className="w-full border-t border-gray-400" />
                     </div>
                     <div className='relative flex justify-center text-sm my-2'>
-                        <span className="bg-white px-2 text-gray-500">
+                        <span className="bg-tertiary px-2 text-gray-400">
                             Or continue with
                         </span>
                     </div>
                 </div>
 
                 <div className="flex flex-row gap-2 mt-2">
-                    <div className="text-gray-500 ">
+                    <div className="text-gray-400 ">
                         {(variant == 'LOGIN') ? "Don't have an account?" : "Already have an account?"}
                     </div>
-                    <div className="underline text-green-500 hover:text-green-400" onClick={toggleVariant}>
+                    <div className="underline text-rose-500 hover:text-rose-400" onClick={toggleVariant}>
                         {(variant == 'LOGIN') ? "Sign up" : "Log in"}
                     </div>
                 </div>

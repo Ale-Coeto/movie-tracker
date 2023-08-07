@@ -1,16 +1,8 @@
-import { getMovie } from "@/app/actions/getTrending";
 import getUser from "@/app/actions/getUser";
-import { NextResponse } from "next/server";
 import prisma from "@/app/libs/prismadb";
 
-interface IParams {
-    id: string;
-}
-
-export async function GET(req: Request, {params}  : {params: IParams}) {
+export const isMovieAdded = async(id: string) =>{
     try {
-        const id = params.id;
-        
         const user = await getUser();
         console.log(id)
 
@@ -36,5 +28,5 @@ export async function GET(req: Request, {params}  : {params: IParams}) {
         console.log(error, "Is movie added error");
         return false;
     }
+}   
 
-}
