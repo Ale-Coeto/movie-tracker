@@ -19,7 +19,7 @@ interface VideoElementProps {
     rate?: number;
 }
 
-const videoElement: React.FC<VideoElementProps> = ({ id, title, image, description, date, voteAverage, type, seen, showComplete, explore, rate }) => {
+const videoElement:React.FC<VideoElementProps> = ({ id, title, image, description, date, voteAverage, type, seen, showComplete, explore, rate }) => {
     const [info, setInfo] = useState(false);
 
 

@@ -20,7 +20,7 @@ interface VideoFooterProps {
     type: "movie" | "show";
 }
 
-const VideoFooter: React.FC<VideoFooterProps> = ({ id, title, image, description, date, voteAverage, type, seen, showComplete }) => {
+const VideoFooter:React.FC<VideoFooterProps> = ({ id, title, image, description, date, voteAverage, type, seen, showComplete }) => {
     const router = useRouter();
     const [add, setAdd] = useState(false);
     const [deleted, setDeleted] = useState(false);
