@@ -1,9 +1,9 @@
-## Movie and show tracker
+# Movie and show tracker
 Website to keep track of trending shows and movies, make a watch list, rate shows and videos and keep discussion groups with friends and the community.
 
 First, run the development server:
 
-## Tools
+# Tools
 Built with:
 - [React](https://reactjs.org/)
 - [Next.js](https://nextjs.org/)
@@ -17,7 +17,7 @@ Built with:
   
 Deployed with [Vercel](https://vercel.com/)
 
-## Structure
+# Structure
 ```bash
 ├─ prisma
 │   └─ schema.prisma
@@ -47,6 +47,6 @@ Deployed with [Vercel](https://vercel.com/)
         └─ libs
 ```
 
-## Check it out
+# Check it out
 https://movies-and-series-tracker.vercel.app/
 
