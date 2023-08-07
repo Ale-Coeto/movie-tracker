@@ -15,7 +15,7 @@ const VideoGrid: React.FC<VideoGridProps> = ({ items, type, explore }) => {
 
             {items.map((result: any, key: any) => (
                 result.poster_path && (
-                    <VideoElement key={key} showComplete={false} rate={result.rate} id={result.id} title={result.title || result.name} image={result.poster_path} description={result.overview} date={result.first_air_date || result.release_date} voteAverage={result.vote_average} type={type || result.title ? "movie" : "show"} explore={explore}/>
+                    <VideoElement key={key} showComplete={false} rate={result.rate} id={result.id} title={result.title || result.name} image={result.poster_path} description={result.overview} date={result.first_air_date || result.release_date} voteAverage={result.vote_average} type={type? (type) : result.title ? "movie" : "show"} explore={explore}/>
             )
             ))}
 

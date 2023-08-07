@@ -8,6 +8,7 @@ import { signIn, useSession } from "next-auth/react";
 import { toast } from "react-hot-toast";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import GoogleButton from "./GoogleButton";
 
 type Variant = "LOGIN" | "REGISTER";
 
@@ -81,16 +82,21 @@ const AuthForm = () => {
                     </Button>
                 </form>
 
-                <div className="relative mt-2">
-                    <div className="absolute inset-0 flex items-center">
-                        <div className="w-full border-t border-gray-400" />
+
+                    <div>
+                        <div className="relative mt-2">
+                            <div className="absolute inset-0 flex items-center">
+                                <div className="w-full border-t border-gray-400" />
+                            </div>
+                            <div className='relative flex justify-center text-sm my-2'>
+                                <span className="bg-tertiary px-2 text-gray-400">
+                                    Or continue with
+                                </span>
+                            </div>
+                        </div>
+                        <GoogleButton />
                     </div>
-                    <div className='relative flex justify-center text-sm my-2'>
-                        <span className="bg-tertiary px-2 text-gray-400">
-                            Or continue with
-                        </span>
-                    </div>
-                </div>
+
 
                 <div className="flex flex-row gap-2 mt-2">
                     <div className="text-gray-400 ">
