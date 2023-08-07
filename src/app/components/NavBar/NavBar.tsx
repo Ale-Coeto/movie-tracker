@@ -1,20 +1,20 @@
-import getUser from "@/app/actions/getUser";
+import getUser from "@/app/utils/actions/getUser";
 import DesktopBar from "./DesktopBar";
 
 async function Sidebar({ children }: {
-    children: React.ReactNode,
-  }) {
+  children: React.ReactNode,
+}) {
 
-    const user = await getUser();
+  const user = await getUser();
 
-    return (
-      <div className="h-full bg-primary">
-        <DesktopBar user={user!}/>
-        <main className="h-full">
-          {children}
-        </main>
-      </div>
-    )
-  }
-  
-  export default Sidebar;
+  return (
+    <div className="h-full bg-primary">
+      <DesktopBar user={user!} />
+      <main className="h-full">
+        {children}
+      </main>
+    </div>
+  )
+}
+
+export default Sidebar;

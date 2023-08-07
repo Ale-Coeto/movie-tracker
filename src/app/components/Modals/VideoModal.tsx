@@ -1,4 +1,4 @@
-import useLoggedIn from "@/app/hooks/useLogged";
+import useLoggedIn from "@/app/utils/hooks/useLogged";
 import StarGroup from "../Videos/StarGroup";
 import VideoFooter from "../Videos/VideoFooter";
 import Modal from "./Modal";

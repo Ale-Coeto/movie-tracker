@@ -1,10 +1,10 @@
 import Button from "@/app/components/Button";
 import Container from "../components/container";
-import { getSeenShows, getToSeeShows } from "@/app/actions/getShows";
+import { getSeenShows, getToSeeShows } from "@/app/utils/actions/getShows";
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import Logbutton from "../components/loginButton";
 
-const ShowLists = async() => {
+const ShowLists = async () => {
     const seenShows = await getSeenShows();
     const toSeeShows = await getToSeeShows();
 

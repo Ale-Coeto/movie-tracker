@@ -1,4 +1,4 @@
-import prisma from "@/app/libs/prismadb";
+import prisma from "@/app/utils/libs/prismadb";
 
 export async function getPosts(id: string) {
     try {

@@ -1,4 +1,4 @@
-import prisma from "@/app/libs/prismadb";
+import prisma from "@/app/utils/libs/prismadb";
 
 export const getGeneral = async () => {
     try {
@@ -8,7 +8,7 @@ export const getGeneral = async () => {
                 id: "64cf25790ccd285092b7604a"
             }
         })
-        
+
         if (!general)
             return null;
 

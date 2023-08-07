@@ -1,5 +1,5 @@
-import ToasterContext from '@/app/context/ToasterContext'
-import AuthContext from '@/app/context/AuthContext'
+import ToasterContext from '@/app/utils/context/ToasterContext'
+import AuthContext from '@/app/utils/context/AuthContext'
 import Sidebar from './components/Sidebar/Sidebar'
 
 

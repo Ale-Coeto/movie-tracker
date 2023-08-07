@@ -1,13 +1,13 @@
-import getUser from "@/app/actions/getUser";
+import getUser from "@/app/utils/actions/getUser";
 import { NextResponse } from "next/server";
-import prisma from "@/app/libs/prismadb";
+import prisma from "@/app/utils/libs/prismadb";
 
 export async function POST(req: Request) {
     try {
         const user = await getUser();
         const body = await req.json();
-        
-        if (!user || !user?.id) 
+
+        if (!user || !user?.id)
             return new NextResponse("User not found", { status: 404 });
 
         if (!body)
@@ -21,7 +21,7 @@ export async function POST(req: Request) {
                 }
             })
 
-            if(!seenVal)
+            if (!seenVal)
                 return new NextResponse("Movie not found", { status: 404 });
 
             const updateMovie = await prisma.movie.update({
@@ -44,7 +44,7 @@ export async function POST(req: Request) {
                 }
             })
 
-            if(!seenVal)
+            if (!seenVal)
                 return new NextResponse("Show not found", { status: 404 });
 
             const updateShow = await prisma.show.update({
@@ -59,9 +59,9 @@ export async function POST(req: Request) {
 
             return NextResponse.json(updateShow);
         }
-        
 
-    } catch (error:any) {
+
+    } catch (error: any) {
         console.log(error, "Add movie error");
         return new NextResponse("Add movie error", { status: 500 });
     }

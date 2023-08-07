@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { AiOutlinePlus } from "react-icons/ai";
 import PostModal from "@/app/components/Modals/PostModal";
-import useLoggedIn from "@/app/hooks/useLogged";
+import useLoggedIn from "@/app/utils/hooks/useLogged";
 
 interface NewPostProps {
     id: string;

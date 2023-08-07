@@ -1,7 +1,7 @@
 'use client'
 
 import Button from "@/app/components/Button";
-import useLoggedIn from "@/app/hooks/useLogged"
+import useLoggedIn from "@/app/utils/hooks/useLogged"
 
 const Logbutton: React.FC = () => {
     const logged = useLoggedIn();

@@ -1,10 +1,10 @@
-import prisma from '@/app/libs/prismadb';
+import prisma from '@/app/utils/libs/prismadb';
 import getSession from './getSession';
 
 const getUser = async () => {
     try {
-         const session = await getSession();
-        
+        const session = await getSession();
+
 
         if (!session?.user?.email)
             return null;
@@ -16,12 +16,12 @@ const getUser = async () => {
             }
         });
 
-        if (!user) 
+        if (!user)
             return null;
 
         return user;
 
-    } catch(error: any) {
+    } catch (error: any) {
         console.log(error, "Get user error");
         return null;
     }

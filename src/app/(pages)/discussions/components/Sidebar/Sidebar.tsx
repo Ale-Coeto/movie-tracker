@@ -1,14 +1,14 @@
-import { getGeneral } from "@/app/actions/getGeneral";
+import { getGeneral } from "@/app/utils/actions/getGeneral";
 import DesktopSideBar from "./DesktopSidebar";
-import { getDiscussions } from "@/app/actions/getDiscussions";
+import { getDiscussions } from "@/app/utils/actions/getDiscussions";
 
-const Sidebar = async({ children }: { children: React.ReactNode }) => {
+const Sidebar = async ({ children }: { children: React.ReactNode }) => {
     const generalDiscussion = await getGeneral();
     const discussions = await getDiscussions();
 
     return (
         <div className="h-full">
-            <DesktopSideBar general={generalDiscussion} discussions={discussions}/>
+            <DesktopSideBar general={generalDiscussion} discussions={discussions} />
             {children}
         </div>
     )

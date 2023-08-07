@@ -2,7 +2,7 @@
 import Button from "@/app/components/Button";
 import CreateDiscussionModal from "@/app/components/Modals/CreateDiscussionModal";
 import JoinModal from "@/app/components/Modals/JoinModal";
-import useLoggedIn from "@/app/hooks/useLogged";
+import useLoggedIn from "@/app/utils/hooks/useLogged";
 import { Discussion } from "@prisma/client";
 import clsx from "clsx";
 import { useRouter } from "next/navigation";

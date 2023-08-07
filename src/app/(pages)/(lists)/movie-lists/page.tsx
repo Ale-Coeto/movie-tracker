@@ -1,6 +1,6 @@
 import Button from "@/app/components/Button";
 import Container from "../components/container";
-import { getSeenMovies, getToSeeMovies } from "@/app/actions/getMovies";
+import { getSeenMovies, getToSeeMovies } from "@/app/utils/actions/getMovies";
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import Logbutton from "../components/loginButton";
 

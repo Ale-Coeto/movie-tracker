@@ -1,7 +1,7 @@
-import prisma from '@/app/libs/prismadb';
+import prisma from '@/app/utils/libs/prismadb';
 import getUser from './getUser';
 
-export const getSeenMovies = async () => {
+export const getSeenShows = async () => {
 
     try {
         const user = await getUser();
@@ -9,7 +9,7 @@ export const getSeenMovies = async () => {
         if (!user?.id)
             return [];
 
-        const movies = await prisma.movie.findMany({
+        const shows = await prisma.show.findMany({
             where: {
                 userId: user?.id,
                 seen: true
@@ -17,28 +17,27 @@ export const getSeenMovies = async () => {
             orderBy: {
                 createdAt: "desc"
             }
-        });
+        })
 
-        if (!movies)
+        if (!shows)
             return [];
 
-        return movies;
+        return shows;
 
     } catch (error: any) {
-        console.log(error, "Get movies error");
+        console.log(error, "Get shows error");
         return [];
     }
-    
+
 }
 
-export const getToSeeMovies = async () =>  {
+export const getToSeeShows = async () => {
     try {
         const user = await getUser();
-
         if (!user?.id)
             return [];
 
-        const movies = await prisma.movie.findMany({
+        const shows = await prisma.show.findMany({
             where: {
                 userId: user?.id,
                 seen: false
@@ -46,15 +45,16 @@ export const getToSeeMovies = async () =>  {
             orderBy: {
                 createdAt: "desc"
             }
-        });
+        })
 
-        if (!movies)
+        if (!shows)
             return [];
 
-        return movies;
+        return shows;
 
     } catch (error: any) {
-        console.log(error, "Get movies error");
+        console.log(error, "Get shows error");
         return [];
     }
+
 }

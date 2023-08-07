@@ -1,6 +1,6 @@
-import getUser from "@/app/actions/getUser";
+import getUser from "@/app/utils/actions/getUser";
 import { NextResponse } from "next/server";
-import prisma from "@/app/libs/prismadb";
+import prisma from "@/app/utils/libs/prismadb";
 
 export async function POST(req: Request) {
     console.log("create post");
@@ -8,11 +8,11 @@ export async function POST(req: Request) {
 
         const body = await req.json();
         const user = await getUser();
-        
+
         if (!user || !body) {
             return new NextResponse("User not found", { status: 404 });
         }
-        
+
         const newPost = await prisma.post.create({
             data: {
                 title: body.title,
@@ -23,7 +23,7 @@ export async function POST(req: Request) {
                         id: user.id
                     }
                 },
-                discussion : {
+                discussion: {
                     connect: {
                         id: body.discussionId
                     }
@@ -33,7 +33,7 @@ export async function POST(req: Request) {
 
         return NextResponse.json(newPost);
 
-    } catch(error: any) {
+    } catch (error: any) {
         console.log(error, "Create post error");
         return new NextResponse(error, { status: 500 });
     }

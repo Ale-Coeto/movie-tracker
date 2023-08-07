@@ -3,8 +3,8 @@ import { signOut } from "next-auth/react";
 import Button from "../Button";
 import BarElement from "./BarElement";
 import { useRouter } from "next/navigation";
-import useRoutes from "@/app/hooks/useRoutes";
-import useLogged from "@/app/hooks/useLogged";
+import useRoutes from "@/app/utils/hooks/useRoutes";
+import useLogged from "@/app/utils/hooks/useLogged";
 import { User } from '@prisma/client'
 
 interface DesktopBarProps {

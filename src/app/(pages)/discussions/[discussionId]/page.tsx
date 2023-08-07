@@ -1,4 +1,4 @@
-import { getPosts } from "@/app/actions/getPosts";
+import { getPosts } from "@/app/utils/actions/getPosts";
 import NewPost from "../components/Sidebar/NewPost";
 import Post from "../components/Post";
 import Header from "../components/Sidebar/Header";

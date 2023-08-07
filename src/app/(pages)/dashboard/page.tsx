@@ -1,6 +1,6 @@
 'use client';
 import { useState } from "react";
-import { useTrendingMovies, useTrendingSeries } from "../../hooks/getTrending";
+import { useTrendingMovies, useTrendingSeries } from "../../utils/hooks/getTrending";
 import VideoGrid from "../../components/Videos/VideoGrid";
 import clsx from "clsx";
 
