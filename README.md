@@ -1,35 +1,69 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Movie and show tracker
+Website to keep track of trending shows and movies, make a watch list, rate shows and videos and keep discussion groups with friends and the community.
+<br/>
 
-## Getting Started
+# Features
+### Authentication
+User login and registration with Next-Auth.
 
-First, run the development server:
 
+### Dashboard
+Top ten trending and popular tv shows and movies fetched from The MovieDB API.
+
+### Explore
+Section to search for any movie or show title, showing other possible or related options.
+
+### Discussions
+Space for group discussions to comment about or rate movies and shows. Users can see and comment in the general discussion (available to all users), create a new one, or join an existing one through a code.  
+<br/>
+
+# Tools
+Built with:
+- [React](https://reactjs.org/)
+- [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Prisma](https://www.prisma.io/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [NextAuth.js](https://next-auth.js.org/)
+- [Headless UI](https://headlessui.com/)
+- [The Movie DB](https://developer.themoviedb.org/docs)
+- [MongoDB Atlas](https://www.mongodb.com/atlas/database)
+  
+Deployed with [Vercel](https://vercel.com/)
+<br/>
+
+# Structure
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+├─ prisma
+│   └─ schema.prisma
+│
+├─ public
+│
+└─ src/app
+    ├─ (main)
+    │
+    ├─ (pages)
+    │   ├─ dashboard
+    │   ├─ explore
+    │   ├─ discussions
+    │   └─ (lists)
+    │         ├─ show-list
+    │         └─ movie-list
+    │
+    ├─ components
+    │
+    ├─ api
+    │   └─ routes
+    │    
+    └─ utils
+        ├─ actions
+        ├─ context
+        ├─ hooks
+        └─ libs
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<br/>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Check it out
+https://movies-and-series-tracker.vercel.app/
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# movie-tracker
