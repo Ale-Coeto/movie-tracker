@@ -12,6 +12,9 @@ export async function getPosts(id: string) {
             },
             include: {
                 user: true
+            },
+            orderBy: {
+                createdAt: "desc"
             }
         })
 

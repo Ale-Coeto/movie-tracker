@@ -6,6 +6,7 @@ import Header from "../components/Sidebar/Header";
 
 const DiscussionIdPage = async (params: any) => {
     const posts = await getPosts(params.searchParams.id);
+    console.log(posts)
 
     return (
         <>

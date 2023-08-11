@@ -4,7 +4,15 @@ import { useEffect, useState } from 'react';
 import { IoSearch } from 'react-icons/io5';
 
 import VideoGrid from '../../../components/Videos/VideoGrid';
-const SearchBar = () => {
+import axios from 'axios';
+
+interface SearchBarProps {
+    movies?: {
+        title: string;
+    }[];
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ movies }) => {
 
 
     const [input, setInput] = useState('');
@@ -14,7 +22,7 @@ const SearchBar = () => {
     const [showMenu, setShowMenu] = useState(false);
 
 
-
+   
 
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3/search/multi?query=${input}&api_key=8cdb9b1141309a7f573a6325cec1687f`)
