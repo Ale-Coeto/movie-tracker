@@ -1,10 +1,10 @@
 # Movie and show tracker
-Website to keep track of trending shows and movies, make a watch list, rate shows and videos and keep discussion groups with friends and the community.
+Web app to keep track and search for trending shows and movies, make a watch list, rate content and keep discussion groups with friends and the community.
 <br/>
 
 # Features
 ### Authentication
-User login and registration with Next-Auth.
+User login and registration with Next-Auth and Google OAuth API.
 
 
 ### Dashboard
