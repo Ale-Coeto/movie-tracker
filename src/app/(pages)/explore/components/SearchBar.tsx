@@ -22,7 +22,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ movies }) => {
     const [showMenu, setShowMenu] = useState(false);
 
 
-   
+
 
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3/search/multi?query=${input}&api_key=8cdb9b1141309a7f573a6325cec1687f`)
@@ -55,7 +55,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ movies }) => {
         <div className='flex flex-col '>
             <div className="flex justify-center">
 
-                <div className='basis-5/12 relative'>
+                <div className='basis-4/5 md:basis-5/12 relative'>
                     <div className='flex flex-row justify-between mt-2 rounded-full bg-secondary pl-2 pr-1 max-h-18 w-full'>
                         <button onClick={handleSearch} className='text-rose-500 font-light ml-2 rounded-full p-2'>
                             <IoSearch size={24} />

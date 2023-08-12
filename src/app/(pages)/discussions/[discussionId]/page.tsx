@@ -6,13 +6,12 @@ import Header from "../components/Sidebar/Header";
 
 const DiscussionIdPage = async (params: any) => {
     const posts = await getPosts(params.searchParams.id);
-    console.log(posts)
 
     return (
         <>
             <Header title={params.searchParams.title} code={params.searchParams.id} />
 
-            <div className="pl-72 pt-20 pr-20 overflow-scroll flex flex-col gap-8">
+            <div className="md:pl-72 px-6 md:pr-20 pt-20 pb-8 overflow-scroll flex flex-col gap-8 bg-primary ">
                 {posts.map((post, key) => (
                     <Post key={key} info={post} />
                 ))}

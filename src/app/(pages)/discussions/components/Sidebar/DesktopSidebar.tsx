@@ -26,7 +26,7 @@ const DesktopSideBar: React.FC<DesktopSideBarProps> = ({ general, discussions })
     }
 
     return (
-        <>
+        <div className="invisible md:visible">
             <JoinModal isOpen={joinOpen} onClose={() => setJoinOpen(false)} />
             <CreateDiscussionModal isOpen={createOpen} onClose={() => setCreateOpen(false)} />
 
@@ -59,7 +59,7 @@ const DesktopSideBar: React.FC<DesktopSideBarProps> = ({ general, discussions })
                 )}
 
             </div>
-        </>
+        </div>
     )
 }
 

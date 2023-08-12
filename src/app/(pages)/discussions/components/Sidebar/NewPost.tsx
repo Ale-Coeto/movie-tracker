@@ -19,7 +19,7 @@ const NewPost: React.FC<NewPostProps> = ({ id }) => {
             {isLogged && (
                 <div>
                     <PostModal isOpen={open} onClose={() => setOpen(false)} id={id} />
-                    <div onClick={() => setOpen(true)} className="fixed rounded-full bottom-6 right-6 bg-tertiary p-3 text-3xl text-white font-bold drop-shadow-xl">
+                    <div onClick={() => setOpen(true)} className="fixed rounded-full bottom-6 right-6 bg-tertiary p-3 text-3xl text-white font-bold drop-shadow-2xl">
                         <AiOutlinePlus />
                     </div>
                 </div>
